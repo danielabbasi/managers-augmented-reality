@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="72e5a36c-1213-41b6-9a17-b3ebbfbace4f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore." afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Datafiles.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Datafiles/Scenes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Datafiles/Scenes/ARProjectScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Datafiles/Scenes/ARProjectScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/CylinderTargetTextures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/CylinderTargetTextures/VuforiaMars_Images.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/CylinderTargetTextures/VuforiaMars_Images/RocketBooster.Body_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/CylinderTargetTextures/VuforiaMars_Images/RocketBooster.Body_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/CylinderTargetTextures/VuforiaMars_Images/RocketBooster.Top_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/CylinderTargetTextures/VuforiaMars_Images/RocketBooster.Top_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/CylinderTargetTextures/VuforiaMars_Images/authoringinfo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/CylinderTargetTextures/VuforiaMars_Images/authoringinfo.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/Emulator.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/Emulator/VuforiaEmulator.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/Emulator/VuforiaEmulator.dat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/Emulator/VuforiaEmulator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/Emulator/VuforiaEmulator.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/CylinderTarget.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/CylinderTarget/cylinder_booster_A4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/CylinderTarget/cylinder_booster_A4.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/CylinderTarget/cylinder_booster_USLetter.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/CylinderTarget/cylinder_booster_USLetter.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/Emulator.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/Emulator/Emulator Ground Plane.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/Emulator/Emulator Ground Plane.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ImageTargets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ImageTargets/target_images_A4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ImageTargets/target_images_A4.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ImageTargets/target_images_USLetter.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ImageTargets/target_images_USLetter.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ModelTarget.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ModelTarget/readme_3dprint.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ModelTarget/readme_3dprint.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/MultiTarget.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/MultiTarget/mars_box_A4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/MultiTarget/mars_box_A4.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/MultiTarget/mars_box_USLetter.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/MultiTarget/mars_box_USLetter.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ObjectTarget.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ObjectTarget/mars_habitat_A4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ObjectTarget/mars_habitat_A4.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ObjectTarget/mars_habitat_USLetter.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/ObjectTarget/mars_habitat_USLetter.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_1.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_2.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_2.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_3.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_3.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_4.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_5.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_5.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_6.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_6.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_7.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_7.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_8.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_8.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_9.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ForPrint/VuMark/MarsVuMark_9.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/ARProjectDB.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/ARProjectDB/engineering_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/ARProjectDB/engineering_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/ARProjectDB/human_resources_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/ARProjectDB/human_resources_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/ARProjectDB/marketing_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/ARProjectDB/marketing_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaEmulator.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaEmulator/emulator_ground_plane_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaEmulator/emulator_ground_plane_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Astronaut_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Astronaut_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Drone_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Drone_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Fissure_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Fissure_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Back_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Back_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Bottom_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Bottom_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Front_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Front_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Left_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Left_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Right_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Right_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Top_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/MarsBox.Top_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Oxygen_scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/ImageTargetTextures/VuforiaMars_Images/Oxygen_scaled.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/TargetsetData.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/TargetsetData/VuforiaMars_Object.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/TargetsetData/VuforiaMars_Object/80a921afee0341b991f24822f2a1e228_preview.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/TargetsetData/VuforiaMars_Object/80a921afee0341b991f24822f2a1e228_preview.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/TargetsetData/VuforiaMars_Object_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/TargetsetData/VuforiaMars_Object_info.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/VuforiaMars_ModelTarget.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/VuforiaMars_ModelTarget/authoringinfo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/VuforiaMars_ModelTarget/authoringinfo.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823_preview.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823_preview.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/VuforiaMars_VuMark.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/VuforiaMars_VuMark/authoringinfo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/VuforiaMars_VuMark/authoringinfo.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/VuforiaMars_VuMark/ec2533ebd7d84669b28886a4f32bc7ec_scaled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Editor/Vuforia/VuforiaMars_VuMark/ec2533ebd7d84669b28886a4f32bc7ec_scaled.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/VuforiaMars_ModelTarget.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823/Materials/Material.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823/Materials/Material.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823/Meshes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823/Meshes/mesh0.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823/Meshes/mesh0.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823/Meshes/mesh1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823/Meshes/mesh1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823/Model.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/VuforiaMars_ModelTarget/ddcf29fe83b64ee984697b36afc5e823/Model.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/VuforiaConfiguration.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/VuforiaConfiguration.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/ARProjectDB.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/ARProjectDB.dat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/ARProjectDB.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/ARProjectDB.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_Images.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_Images.dat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_Images.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_Images.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_ModelTarget.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_ModelTarget.dat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_ModelTarget.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_ModelTarget.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_Object_OT.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_Object_OT.dat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_Object_OT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_Object_OT.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_VuMark.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_VuMark.dat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_VuMark.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/Vuforia/VuforiaMars_VuMark.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Editor/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Editor/Scripts/OpenSourceInitializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Editor/Scripts/OpenSourceInitializer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Editor/VirtualButtonTextures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Editor/VirtualButtonTextures/VirtualButtonPreview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Editor/VirtualButtonTextures/VirtualButtonPreview.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Editor/VirtualButtonTextures/VirtualButtonPreviewMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Editor/VirtualButtonTextures/VirtualButtonPreviewMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Fonts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Fonts/SourceSansPro.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Fonts/SourceSansPro.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/CloudRecoTarget.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/CloudRecoTarget.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/ColoredLines.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/ColoredLines.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/DefaultTarget.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/DefaultTarget.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/DepthMask.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/DepthMask.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/GroundPlaneIndicator.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/GroundPlaneIndicator.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/GroundPlaneReference.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/GroundPlaneReference.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/GuideView2D.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/GuideView2D.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/MidAirIndicator.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/MidAirIndicator.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/MidAirReference.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/MidAirReference.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/OutlineOpaque.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/OutlineOpaque.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/StandardCutout.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/StandardCutout.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/UserDefinedTarget.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Materials/UserDefinedTarget.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Prefabs/DefaultMidAirIndicator.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Prefabs/DefaultMidAirIndicator.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Prefabs/DefaultPlaneIndicator.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Prefabs/DefaultPlaneIndicator.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Prefabs/GroundPlaneReference.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Prefabs/GroundPlaneReference.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Prefabs/MidAirReference.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Prefabs/MidAirReference.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Scripts/DefaultInitializationErrorHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Scripts/DefaultInitializationErrorHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Scripts/DefaultTrackableEventHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Scripts/DefaultTrackableEventHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/BrightTexture.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/BrightTexture.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/CameraDiffuse.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/CameraDiffuse.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/ColoredLines.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/ColoredLines.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/DepthContour.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/DepthContour.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/DepthMask.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/DepthMask.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/OutlineOpaque.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/OutlineOpaque.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/Text3D.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/Text3D.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/VertexLitWithZ.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Shaders/VertexLitWithZ.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures/CloudRecoTarget.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures/CloudRecoTarget.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures/GroundPlaneReference.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures/GroundPlaneReference.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures/MidAirReference.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures/MidAirReference.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures/Reticle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures/Reticle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures/UserDefinedTarget.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures/UserDefinedTarget.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures/VideoBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/Textures/VideoBackground.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/version" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Vuforia/version.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/NetworkManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UnityPackageManager/manifest.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name=".gitignore." pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore.">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.gitignore." />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AR_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AR_Project" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="72e5a36c-1213-41b6-9a17-b3ebbfbace4f" name="Default" comment="" />
+      <created>1542943237793</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542943237793</updated>
+      <workItem from="1542943239468" duration="71000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="71000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Image Layers" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
+      <window_info anchor="right" id="Database" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.gitignore.">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
