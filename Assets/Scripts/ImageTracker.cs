@@ -62,15 +62,19 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
 
                             Feed<OrganisationalUnitProcessType> organisationalUnitProcessTypes = ApiHelper.GetOrganisationalUnitProcessTypes();
 
-                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses = ApiHelper.GetOrganisationalUnitProcesses(
+                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses1 = ApiHelper.GetOrganisationalUnitProcesses(
                                 organisationalUnitProcessTypes.Entries
                                     .Where((organisationalUnitProcessType) => organisationalUnitProcessType.Title.ToLower() == "cwl hr offboarding")
                                     .FirstOrDefault()
                                     .Id);
 
-                        
+                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses2 = ApiHelper.GetOrganisationalUnitProcesses(
+                                organisationalUnitProcessTypes.Entries
+                                    .Where((organisationalUnitProcessType) => organisationalUnitProcessType.Title.ToLower() == "cwl hr onboarding")
+                                    .FirstOrDefault()
+                                    .Id);
 
-                            List<ProcessStatuses> processStatuses = organisationalUnitProcesses.Entries
+                            List<ProcessStatuses> processStatuses1 = organisationalUnitProcesses1.Entries
                                 .Select((organisationalUnitProcess) =>
                                 {
                                     return (ProcessStatuses)Convert.ToInt32(organisationalUnitProcess.Categories
@@ -79,6 +83,21 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
                                         .Label);
                                 })
                                 .ToList();
+
+                            List<ProcessStatuses> processStatuses2 = organisationalUnitProcesses2.Entries
+                                .Select((organisationalUnitProcess) =>
+                                {
+                                    return (ProcessStatuses)Convert.ToInt32(organisationalUnitProcess.Categories
+                                        .Where((organisationalUnitProcessCategory) => organisationalUnitProcessCategory.Term.ToLower() == "status")
+                                        .FirstOrDefault()
+                                        .Label);
+                                })
+                                .ToList();
+
+                            List<ProcessStatuses> processStatuses = new List<ProcessStatuses>();
+
+                            processStatuses.AddRange(processStatuses1);
+                            processStatuses.AddRange(processStatuses2);
 
                             worker.ReportProgress(new OrganisationalUnitStatuses(
                                 processStatuses
