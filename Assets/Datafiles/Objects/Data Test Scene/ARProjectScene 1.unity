@@ -330,7 +330,13 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 224188168374824928, guid: 2794a09cfec32734aab693bc9982c1a2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114114333081428918, guid: 2794a09cfec32734aab693bc9982c1a2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2794a09cfec32734aab693bc9982c1a2, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &119025688 stripped
@@ -403,6 +409,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &414980758 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1701156510296150, guid: 2794a09cfec32734aab693bc9982c1a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 119025687}
+--- !u!225 &414980759
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 414980758}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &422807772
 Prefab:
   m_ObjectHideFlags: 0
@@ -864,7 +886,28 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 224188168374824928, guid: 2794a09cfec32734aab693bc9982c1a2,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 224188168374824928, guid: 2794a09cfec32734aab693bc9982c1a2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114996043014023178, guid: 2794a09cfec32734aab693bc9982c1a2,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 114996043014023178, guid: 2794a09cfec32734aab693bc9982c1a2,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114114333081428918, guid: 2794a09cfec32734aab693bc9982c1a2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2794a09cfec32734aab693bc9982c1a2, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &557353065 stripped
@@ -1152,6 +1195,22 @@ Material:
     m_Floats: []
     m_Colors:
     - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+--- !u!1 &915312490 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1701156510296150, guid: 2794a09cfec32734aab693bc9982c1a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1091250330}
+--- !u!225 &915312491
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 915312490}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &994848405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,10 +1341,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 994848405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57d2951fa18cf6241a48b45c9eefbd52, type: 3}
+  m_Script: {fileID: 11500000, guid: bf9de2e5da5e2a34191d00e4b92133cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieChartHR: {fileID: 0}
+  font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!43 &1021783647
 Mesh:
   m_ObjectHideFlags: 0
@@ -1538,7 +1597,13 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 224188168374824928, guid: 2794a09cfec32734aab693bc9982c1a2,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114114333081428918, guid: 2794a09cfec32734aab693bc9982c1a2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2794a09cfec32734aab693bc9982c1a2, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &1091250331 stripped
@@ -1821,8 +1886,8 @@ Transform:
   m_LocalPosition: {x: 62.7, y: 0, z: 0}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
-  - {fileID: 119025688}
   - {fileID: 691154995}
+  - {fileID: 119025688}
   - {fileID: 1141399126}
   - {fileID: 469517695}
   - {fileID: 2048427484}
@@ -1920,10 +1985,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1645336014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57d2951fa18cf6241a48b45c9eefbd52, type: 3}
+  m_Script: {fileID: 11500000, guid: bf9de2e5da5e2a34191d00e4b92133cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieChartHR: {fileID: 0}
+  font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1653977020
 GameObject:
   m_ObjectHideFlags: 0
@@ -2925,7 +2990,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2141230847}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57d2951fa18cf6241a48b45c9eefbd52, type: 3}
+  m_Script: {fileID: 11500000, guid: bf9de2e5da5e2a34191d00e4b92133cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieChartHR: {fileID: 0}
+  font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}

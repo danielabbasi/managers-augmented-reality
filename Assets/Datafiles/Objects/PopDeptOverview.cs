@@ -3,17 +3,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using Vuforia;
 using ChartAndGraph;
 
-public class ImageTracker : MonoBehaviour, ITrackableEventHandler
+public class PopDeptOverview : MonoBehaviour, ITrackableEventHandler
 {
-    public ImageTracker()
+	public Font font;
+
+	private bool uiUpdated = false;
+
+    public PopDeptOverview()
     {
         Credentials = new Credentials("cristiano.bellucci.fujitsu+cardiffadmin@gmail.com", "Millennium");
     }
 
-    public PieChart pieChartHR;
 
     #region Variables
 
@@ -116,7 +120,9 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
 //                            pieChartHR.DataSource.SetValue("Successful", callback.OkCount);
 //                            pieChartHR.DataSource.SetValue("Pending", callback.AwaitingCount);
 //                            pieChartHR.DataSource.SetValue("Technical Error", callback.TechnicalErrorCount);
-
+							if (uiUpdated == false) {
+								updateUI("HR");
+							}
                             Debug.Log("Error Count: " + callback.TechnicalErrorCount);
                             Debug.Log("OK Count: " + callback.OkCount);
                             Debug.Log("Pending Count: " + callback.AwaitingCount);
@@ -161,7 +167,9 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
                         }, (callback) =>
                         {
                             //Do whatever with the values here
-
+							if (uiUpdated == false) {
+								updateUI("Engineering");
+							}
                             Debug.Log(callback.TechnicalErrorCount);
                             Debug.Log(callback.OkCount);
                             Debug.Log(callback.AwaitingCount);
@@ -206,7 +214,9 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
                         }, (callback) =>
                         {
                             //Do whatever with the values here
-
+							if (uiUpdated == false) {
+								updateUI("Marketing");
+							}
                             Debug.Log(callback.TechnicalErrorCount);
                             Debug.Log(callback.OkCount);
                             Debug.Log(callback.AwaitingCount);
@@ -225,8 +235,29 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
         }
     }
 
-	private void updateUI()
+	private void updateUI(String deptStr)
 	{
+		GameObject dept = GameObject.Find(deptStr);
+		GameObject deptOverview = dept.transform.Find("DeptOverview").gameObject;
+		GameObject topContainer = deptOverview.transform.Find("Top Container").gameObject;
+		GameObject titleContainer = topContainer.transform.Find("Dept Title").gameObject;
+		titleContainer.transform.SetParent(topContainer.transform);
+		setTitle (titleContainer, deptStr);
+		CanvasGroup cg = deptOverview.GetComponent("CanvasGroup") as CanvasGroup;
+		cg.alpha = 0.1f;
+		uiUpdated = true;
+	}
+
+	private void setTitle(GameObject titleContainer, String deptStr){
+		Text myText = titleContainer.AddComponent<Text>();
+		myText.font = font;
+		myText.text = deptStr;
+		myText.alignment = TextAnchor.MiddleCenter;
+		myText.resizeTextForBestFit = true;
+	}
+
+	private void addProcesses(){
+
 	}
 
     #endregion
