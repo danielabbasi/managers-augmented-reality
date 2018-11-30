@@ -225,5 +225,9 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
         }
     }
 
+	private void updateUI()
+	{
+	}
+
     #endregion
 }
