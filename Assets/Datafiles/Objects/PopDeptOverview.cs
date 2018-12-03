@@ -121,7 +121,7 @@ public class PopDeptOverview : MonoBehaviour, ITrackableEventHandler
 //                            pieChartHR.DataSource.SetValue("Pending", callback.AwaitingCount);
 //                            pieChartHR.DataSource.SetValue("Technical Error", callback.TechnicalErrorCount);
 							if (uiUpdated == false) {
-								updateUI("HR");
+								updateUI("HR",callback);
 							}
                             Debug.Log("Error Count: " + callback.TechnicalErrorCount);
                             Debug.Log("OK Count: " + callback.OkCount);
@@ -168,7 +168,7 @@ public class PopDeptOverview : MonoBehaviour, ITrackableEventHandler
                         {
                             //Do whatever with the values here
 							if (uiUpdated == false) {
-								updateUI("Engineering");
+								updateUI("Engineering",callback);
 							}
                             Debug.Log(callback.TechnicalErrorCount);
                             Debug.Log(callback.OkCount);
@@ -215,7 +215,8 @@ public class PopDeptOverview : MonoBehaviour, ITrackableEventHandler
                         {
                             //Do whatever with the values here
 							if (uiUpdated == false) {
-								updateUI("Marketing");
+								Debug.Log(callback.GetType());
+								updateUI("Marketing",callback);
 							}
                             Debug.Log(callback.TechnicalErrorCount);
                             Debug.Log(callback.OkCount);
@@ -235,7 +236,7 @@ public class PopDeptOverview : MonoBehaviour, ITrackableEventHandler
         }
     }
 
-	private void updateUI(String deptStr)
+	private void updateUI(String deptStr, OrganisationalUnitStatuses callback)
 	{
 		GameObject dept = GameObject.Find(deptStr);
 		GameObject deptOverview = dept.transform.Find("DeptOverview").gameObject;
@@ -243,8 +244,9 @@ public class PopDeptOverview : MonoBehaviour, ITrackableEventHandler
 		GameObject titleContainer = topContainer.transform.Find("Dept Title").gameObject;
 		titleContainer.transform.SetParent(topContainer.transform);
 		setTitle (titleContainer, deptStr);
-		CanvasGroup cg = deptOverview.GetComponent("CanvasGroup") as CanvasGroup;
-		cg.alpha = 0.1f;
+		addProjects ();
+//		CanvasGroup cg = deptOverview.GetComponent("CanvasGroup") as CanvasGroup;
+//		cg.alpha = 0.1f;
 		uiUpdated = true;
 	}
 
@@ -256,7 +258,7 @@ public class PopDeptOverview : MonoBehaviour, ITrackableEventHandler
 		myText.resizeTextForBestFit = true;
 	}
 
-	private void addProcesses(){
+	private void addProjects(){
 
 	}
 
