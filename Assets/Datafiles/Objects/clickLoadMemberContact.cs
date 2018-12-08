@@ -1,21 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class clickLoadMemberContact : MonoBehaviour {
 
 	void OnMouseDown(){
 		Debug.Log (this.gameObject.name + " Was Clicked.");
-		string proName = this.gameObject.name;
+		string memberName = this.gameObject.name;
 		GameObject dept = this.gameObject.transform.parent.parent.parent.gameObject;
 		GameObject memberContact = dept.transform.Find ("MemberContact").gameObject;
 
-		setCanvasGroup (1f, memberContact);
+        setNewViewData(memberContact,memberName);
 
+        setCanvasGroup (1f, memberContact);
 		setToView (memberContact);
 	}
 
-	void setCanvasGroup(float alpha, GameObject o){
+    void setNewViewData(GameObject memberContact, string member)
+    {
+        //Add Project Title
+        memberContact.transform.Find("Top Container").Find("Dept Title").GetComponent<Text>().text = member;
+        Debug.Log(memberContact.name);
+
+        //Add Project Members
+        GameObject memContainer = memberContact.transform.Find("Member Info").gameObject;
+        Debug.Log(memContainer.name);
+
+
+
+       
+
+
+        //Add Project Processes
+
+    }
+
+    void setCanvasGroup(float alpha, GameObject o){
 		CanvasGroup canvas = o.GetComponent ("CanvasGroup") as CanvasGroup;
 		canvas.alpha = alpha;
 	}

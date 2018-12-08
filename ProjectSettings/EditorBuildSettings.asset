@@ -4,4 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Datafiles/Objects/Data Test Scene/ARProjectScene 1.unity
+    guid: 5283d3b1a450a534b8c572d3fd923248
