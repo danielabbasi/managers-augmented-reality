@@ -65,5 +65,52 @@ public static class ApiHelperExtensions
             });
     }
 
+    public static Feed<OrganisationalUnitProcess> GetMarketingFairOrganisationalUnitProcesses(this ApiHelper helper)
+    {
+        if (helper == null) throw new ArgumentNullException("helper");
+
+        return helper.PerformRequest<Feed<OrganisationalUnitProcess>>(
+            @"https://live.runmyprocess.com/live/112761542179152739/request?operator=EE%20EE%20IS&column=name%20status%20events%20published%20updated&value=215357%20ACCEPTANCE%20NULL&filter=PROJECT%20MODE%20PARENT&nb=20&first=0&method=GET&P_rand=77540",
+            (values) => { });
+    }
+
+    public static Feed<OrganisationalUnitProcess> GetMarketingCampaignOrganisationalUnitProcesses(this ApiHelper helper)
+    {
+        if (helper == null) throw new ArgumentNullException("helper");
+
+        return helper.PerformRequest<Feed<OrganisationalUnitProcess>>(
+            @"https://live.runmyprocess.com/live/112761542179152739/requestreport/CWL%20Market%20Campaign%20Report.csv?operator=EE%20EE%20IS&column=name%20status%20events%20published%20updated&value=215356%20ACCEPTANCE%20NULL&filter=PROJECT%20MODE%20PARENT&nb=20&first=0&method=GET&P_rand=34765",
+            (values) => { });
+    }
+
+    public static Feed<OrganisationalUnitProcess> GetEngineeringProjectOrganisationalUnitProcesses(this ApiHelper helper)
+    {
+        if (helper == null) throw new ArgumentNullException("helper");
+
+        return helper.PerformRequest<Feed<OrganisationalUnitProcess>>(
+            @"https://live.runmyprocess.com/live/112761542179152739/request?operator=EE%20EE%20IS&column=name%20status%20events%20published%20updated&value=215449%20ACCEPTANCE%20NULL&filter=PROJECT%20MODE%20PARENT&nb=20&first=0&method=GET&P_rand=80194",
+            (values) => { });
+    }
+
+    public static Feed<OrganisationalUnitProcess> GetEngineeringReleaseOrganisationalUnitProcesses(this ApiHelper helper)
+    {
+        if (helper == null) throw new ArgumentNullException("helper");
+
+        return helper.PerformRequest<Feed<OrganisationalUnitProcess>>(
+            @"https://live.runmyprocess.com/live/112761542179152739/request?operator=EE%20EE%20IS&column=name%20status%20events%20published%20updated&value=215400%20ACCEPTANCE%20NULL&filter=PROJECT%20MODE%20PARENT&nb=20&first=0&method=GET&P_rand=22715",
+            (values) => { });
+    }
+
+    public static Feed<OrganisationalUnitProcess> GetEngineeringTestOrganisationalUnitProcesses(this ApiHelper helper)
+    {
+        if (helper == null) throw new ArgumentNullException("helper");
+
+        return helper.PerformRequest<Feed<OrganisationalUnitProcess>>(
+            @"https://live.runmyprocess.com/live/112761542179152739/request?operator=EE%20EE%20IS&column=name%20status%20events%20published%20updated&value=215358%20ACCEPTANCE%20NULL&filter=PROJECT%20MODE%20PARENT&nb=20&first=0&method=GET&P_rand=84319",
+            (values) => { });
+    }
+
+
+
     #endregion
 }

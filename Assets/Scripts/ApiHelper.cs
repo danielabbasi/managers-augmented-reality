@@ -6,6 +6,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Xml;
+using UnityEngine;
 
 public sealed class ApiHelper
 {
@@ -59,7 +60,8 @@ public sealed class ApiHelper
                 url = url.Replace("@" + keyValue.Key, keyValue.Value);
             }
         }
-        
+
+        Debug.Log(url);
         //Check if this request has been processed before by checking the cache
 
         TEntityType entity = Cache.Get<TEntityType>(url);

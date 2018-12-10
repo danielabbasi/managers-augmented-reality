@@ -14,6 +14,8 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
     }
 
     public PieChart pieChartHR;
+    public PieChart pieChartMar;
+    public PieChart pieChartEng;
 
     #region Variables
 
@@ -132,13 +134,14 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
 
                             Feed<OrganisationalUnitProcessType> organisationalUnitProcessTypes = ApiHelper.GetOrganisationalUnitProcessTypes();
 
-                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses = ApiHelper.GetOrganisationalUnitProcesses(
-                                organisationalUnitProcessTypes.Entries
-                                    .Where((organisationalUnitProcessType) => organisationalUnitProcessType.Title.ToLower() == "cwl hr offboarding")
-                                    .FirstOrDefault()
-                                    .Id);
+                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses1 = ApiHelper.GetEngineeringProjectOrganisationalUnitProcesses();
 
-                            List<ProcessStatuses> processStatuses = organisationalUnitProcesses.Entries
+                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses2 = ApiHelper.GetEngineeringReleaseOrganisationalUnitProcesses();
+
+                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses3 = ApiHelper.GetEngineeringTestOrganisationalUnitProcesses();
+
+
+                            List<ProcessStatuses> processStatuses1 = organisationalUnitProcesses1.Entries
                                 .Select((organisationalUnitProcess) =>
                                 {
                                     return (ProcessStatuses)Convert.ToInt32(organisationalUnitProcess.Categories
@@ -147,6 +150,35 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
                                         .Label);
                                 })
                                 .ToList();
+
+                            List<ProcessStatuses> processStatuses2 = organisationalUnitProcesses2.Entries
+                                .Select((organisationalUnitProcess) =>
+                                {
+                                    return (ProcessStatuses)Convert.ToInt32(organisationalUnitProcess.Categories
+                                        .Where((organisationalUnitProcessCategory) => organisationalUnitProcessCategory.Term.ToLower() == "status")
+                                        .FirstOrDefault()
+                                        .Label);
+                                })
+                                .ToList();
+
+                            List<ProcessStatuses> processStatuses3 = organisationalUnitProcesses3.Entries
+                                .Select((organisationalUnitProcess) =>
+                                {
+                                    return (ProcessStatuses)Convert.ToInt32(organisationalUnitProcess.Categories
+                                        .Where((organisationalUnitProcessCategory) => organisationalUnitProcessCategory.Term.ToLower() == "status")
+                                        .FirstOrDefault()
+                                        .Label);
+                                })
+                                .ToList();
+
+                            List<ProcessStatuses> processStatuses = new List<ProcessStatuses>();
+
+                            processStatuses.AddRange(processStatuses1);
+                            processStatuses.AddRange(processStatuses2);
+                            processStatuses.AddRange(processStatuses3);
+
+                            Debug.Log(processStatuses);
+
 
                             worker.ReportProgress(new OrganisationalUnitStatuses(
                                 processStatuses
@@ -160,16 +192,21 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
                                         .Count()));
                         }, (callback) =>
                         {
-                            //Do whatever with the values here
+                            Debug.Log("Error Count: " + callback.TechnicalErrorCount);
+                            Debug.Log("OK Count: " + callback.OkCount);
+                            Debug.Log("Pending Count: " + callback.AwaitingCount);
 
-                            Debug.Log(callback.TechnicalErrorCount);
-                            Debug.Log(callback.OkCount);
-                            Debug.Log(callback.AwaitingCount);
+                            pieChartEng.DataSource.SetValue("Successful", callback.OkCount);
+                            pieChartEng.DataSource.SetValue("Pending", callback.AwaitingCount);
+                            pieChartEng.DataSource.SetValue("Technical Error", callback.TechnicalErrorCount);
+                         
+
                         }).RunAsync();
 
                         break;
                     }
                 case "Marketing":
+
                     {
                         AsyncWorker<OrganisationalUnitStatuses>.Dispatch((worker) =>
                         {
@@ -177,13 +214,11 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
 
                             Feed<OrganisationalUnitProcessType> organisationalUnitProcessTypes = ApiHelper.GetOrganisationalUnitProcessTypes();
 
-                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses = ApiHelper.GetOrganisationalUnitProcesses(
-                                organisationalUnitProcessTypes.Entries
-                                    .Where((organisationalUnitProcessType) => organisationalUnitProcessType.Title.ToLower() == "cwl hr offboarding")
-                                    .FirstOrDefault()
-                                    .Id);
+                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses = ApiHelper.GetMarketingFairOrganisationalUnitProcesses();
 
-                            List<ProcessStatuses> processStatuses = organisationalUnitProcesses.Entries
+                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses1 = ApiHelper.GetMarketingCampaignOrganisationalUnitProcesses();
+
+                            List<ProcessStatuses> processStatuses1 = organisationalUnitProcesses.Entries
                                 .Select((organisationalUnitProcess) =>
                                 {
                                     return (ProcessStatuses)Convert.ToInt32(organisationalUnitProcess.Categories
@@ -192,6 +227,21 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
                                         .Label);
                                 })
                                 .ToList();
+
+                            List<ProcessStatuses> processStatuses2 = organisationalUnitProcesses1.Entries
+                                .Select((organisationalUnitProcess) =>
+                                {
+                                    return (ProcessStatuses)Convert.ToInt32(organisationalUnitProcess.Categories
+                                        .Where((organisationalUnitProcessCategory) => organisationalUnitProcessCategory.Term.ToLower() == "status")
+                                        .FirstOrDefault()
+                                        .Label);
+                                })
+                                .ToList();
+
+                            List<ProcessStatuses> processStatuses = new List<ProcessStatuses>();
+
+                            processStatuses.AddRange(processStatuses1);
+                            processStatuses.AddRange(processStatuses2);
 
                             worker.ReportProgress(new OrganisationalUnitStatuses(
                                 processStatuses
@@ -207,9 +257,14 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
                         {
                             //Do whatever with the values here
 
-                            Debug.Log(callback.TechnicalErrorCount);
-                            Debug.Log(callback.OkCount);
-                            Debug.Log(callback.AwaitingCount);
+                            Debug.Log("Error Count: " + callback.TechnicalErrorCount);
+                            Debug.Log("OK Count: " + callback.OkCount);
+                            Debug.Log("Pending Count: " + callback.AwaitingCount);
+
+                            pieChartMar.DataSource.SetValue("Successful", callback.OkCount);
+                            pieChartMar.DataSource.SetValue("Pending", callback.AwaitingCount);
+                            pieChartMar.DataSource.SetValue("Technical Error", callback.TechnicalErrorCount);
+
                         }).RunAsync();
 
                         break;
