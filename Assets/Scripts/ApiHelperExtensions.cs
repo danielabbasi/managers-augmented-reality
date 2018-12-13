@@ -1,4 +1,7 @@
+using Assets.Scripts;
+using Assets.StepsData;
 using System;
+using UnityEngine;
 
 public static class ApiHelperExtensions
 {
@@ -109,6 +112,24 @@ public static class ApiHelperExtensions
             @"https://live.runmyprocess.com/live/112761542179152739/request?operator=EE%20EE%20IS&column=name%20status%20events%20published%20updated&value=215358%20ACCEPTANCE%20NULL&filter=PROJECT%20MODE%20PARENT&nb=20&first=0&method=GET&P_rand=84319",
             (values) => { });
     }
+
+    public static StepsData GetProcessStepsById(this ApiHelperReturnJSON helper, string id)
+    {
+        if (helper == null) throw new ArgumentNullException("helper");
+
+        StepsData stepsData = helper.PerformRequest<StepsData>(
+            @"https://live.runmyprocess.com/live/112761542179152739/request/@value?P_mode=ACCEPTANCE",
+            (values) =>
+            {
+                values.Add("value", Convert.ToString(id));
+            });
+
+       
+
+        return stepsData;
+    }
+
+
 
 
 

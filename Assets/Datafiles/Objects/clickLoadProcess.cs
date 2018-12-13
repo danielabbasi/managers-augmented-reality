@@ -1,13 +1,30 @@
-﻿using System.Collections;
+﻿using Assets.StepsData;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class clickLoadProcess : MonoBehaviour {
 
-	void OnMouseDown(){
-		Debug.Log (this.gameObject.name + " Was Clicked.");
-		string procName = this.gameObject.name;
+    private ApiHelperReturnJSON ApiHelper { get; set; }
+    private Credentials Credentials { get; set; }
+
+    public GameObject stepRow;
+
+    public clickLoadProcess()
+    {
+        Credentials = new Credentials("cristiano.bellucci.fujitsu+cardiffadmin@gmail.com", "Millennium");
+    }
+
+    void OnMouseDown(){
+
+        if (ApiHelper == null)
+        {
+            ApiHelper = new ApiHelperReturnJSON(Credentials.Username, Credentials.Password);
+        }
+
+        Debug.Log (this.gameObject.name + " Was Clicked.");
+		string procName = this.gameObject.transform.Find("proc-name").GetComponent<Text>().text;
 		GameObject dept = this.gameObject.transform.parent.parent.parent.gameObject;
 		GameObject processOverview = dept.transform.Find ("ProcessOverview").gameObject;
 		GameObject projOverview = dept.transform.Find("ProjOverview").gameObject;
@@ -26,32 +43,69 @@ public class clickLoadProcess : MonoBehaviour {
         //Add Project Title
         procOverview.transform.Find("Top Container").Find("Dept Title").GetComponent<Text>().text = process;
         Debug.Log(procOverview.name);
-
-        //Add Project Members
-        GameObject memContainer = procOverview.transform.Find("Member Container").gameObject;
-        Debug.Log(memContainer.name);
+        Debug.Log(process);
 
 
-        memContainer.transform.Find("member_1").GetComponent<Text>().text = "Team Member 1";
-        memContainer.transform.Find("member_2").GetComponent<Text>().text = "Team Member 2";
-        memContainer.transform.Find("member_3").GetComponent<Text>().text = "Team Member 3";
+
+        AsyncWorker<StepsData>.Dispatch((worker) =>
+        {
+            StepsData stepD = ApiHelperExtensions.GetProcessStepsById(ApiHelper, process);
 
 
-        //Add Project Processes
-        GameObject midContainer = procOverview.transform.Find("Middle Container").gameObject;
+        worker.ReportProgress(stepD);
 
-        GameObject stepRow_1 = midContainer.transform.Find("Step_1").gameObject;
-        stepRow_1.transform.Find("title-name").GetComponent<Text>().text = "Step 1";
-        stepRow_1.transform.Find("title-die").GetComponent<Text>().text = "5";
-        stepRow_1.transform.Find("title-status").GetComponent<Image>().color = new Color32(240, 0, 0, 255);
-        stepRow_1.transform.Find("title-report").GetComponent<Text>().text = "Step 1";
 
-        GameObject stepRow_2 = midContainer.transform.Find("Step_2").gameObject;
-        stepRow_2.transform.Find("title-name").GetComponent<Text>().text = "Step 2";
-        stepRow_2.transform.Find("title-die").GetComponent<Text>().text = "1";
-        stepRow_2.transform.Find("title-status").GetComponent<Image>().color = new Color32(220, 150, 0, 255);
-        stepRow_2.transform.Find("title-report").GetComponent<Text>().text = "Step 2";
+        }, (callback) =>
+            {
+                AddSteps(callback);
+        }).RunAsync();
+}
+
+    void AddSteps(StepsData stepD) {
+        GameObject deptObj = this.gameObject.transform.parent.parent.parent.gameObject;
+        GameObject processOverview = deptObj.transform.Find("ProcessOverview").gameObject;
+        GameObject processContainer = processOverview.transform.Find("Middle Container").gameObject;
+
+        removeExistingRows(processContainer);
+
+        int height = 400;
+
+        int Count = 1;
+        foreach (var a in stepD.feed.entry.content.P_value.path) {
+            Debug.Log(a.id + "- Status Code: "+a.st);
+
+            //Set rows position 
+            GameObject row = Instantiate(stepRow) as GameObject;
+            row.transform.SetParent(processContainer.transform);
+            row.transform.localPosition = new Vector3(0, -(60 * Count), 0);
+            row.transform.localRotation = Quaternion.identity;
+            row.transform.localScale = new Vector3(1, 1, 1);
+
+            //set row data
+            row.transform.Find("step-name").GetComponent<Text>().text = a.st.ToString();
+            //row.transform.Find("proc-sie").GetComponent<Text>().text = callback.InstanceCount[Count - 1].ToString();
+
+            //Extend dept canvas
+            processOverview.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 400 + (Count * 60));
+
+            Count++;
+
+        }
     }
+
+    void removeExistingRows(GameObject stepsContainer)
+    {
+
+        foreach (Transform child in stepsContainer.transform)
+        {
+            if (child.name.Contains("Clone"))
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+        }
+
+    }
+
 
     void setCanvasGroup(float alpha, GameObject o){
 		CanvasGroup canvas = o.GetComponent ("CanvasGroup") as CanvasGroup;

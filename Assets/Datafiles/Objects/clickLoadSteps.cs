@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.StepsData;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,25 +24,29 @@ public class clickLoadSteps : MonoBehaviour {
 
     void setNewViewData(GameObject stepOverview, string step)
     {
-        //Add Project Title
-        stepOverview.transform.Find("Top Container").Find("Dept Title").GetComponent<Text>().text = step;
-        Debug.Log(stepOverview.name);
+        ////Add Project Title
+        //stepOverview.transform.Find("Top Container").Find("Dept Title").GetComponent<Text>().text = step;
+        //Debug.Log(stepOverview.name);
 
-        //Add Project Members
-        GameObject memContainer = stepOverview.transform.Find("Member Container").gameObject;
-        Debug.Log(memContainer.name);
-
-
-        GameObject memCon_1 = memContainer.transform.Find("member_1").gameObject;
-        GameObject memCon_2 = memContainer.transform.Find("member_2").gameObject;
-        GameObject memCon_3 = memContainer.transform.Find("member_3").gameObject;
-
-        memCon_1.transform.Find("member - name").GetComponent<Text>().text = "Member 1";
-        memCon_2.transform.Find("member - name").GetComponent<Text>().text = "Member 1";
-        memCon_3.transform.Find("member - name").GetComponent<Text>().text = "Member 1";
+        ////Add Project Members
+        //GameObject memContainer = stepOverview.transform.Find("Member Container").gameObject;
+        //Debug.Log(memContainer.name);
 
 
-        //Add Project Processes
+        //GameObject memCon_1 = memContainer.transform.Find("member_1").gameObject;
+        //GameObject memCon_2 = memContainer.transform.Find("member_2").gameObject;
+        //GameObject memCon_3 = memContainer.transform.Find("member_3").gameObject;
+
+        //memCon_1.transform.Find("member - name").GetComponent<Text>().text = "Member 1";
+        //memCon_2.transform.Find("member - name").GetComponent<Text>().text = "Member 1";
+        //memCon_3.transform.Find("member - name").GetComponent<Text>().text = "Member 1";
+
+
+        ////Add Project Processes
+        ///
+
+
+        
 
     }
 

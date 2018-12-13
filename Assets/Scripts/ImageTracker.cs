@@ -115,9 +115,9 @@ public class ImageTracker : MonoBehaviour, ITrackableEventHandler
                         {
                             //Do whatever with the values here
 
-//                            pieChartHR.DataSource.SetValue("Successful", callback.OkCount);
-//                            pieChartHR.DataSource.SetValue("Pending", callback.AwaitingCount);
-//                            pieChartHR.DataSource.SetValue("Technical Error", callback.TechnicalErrorCount);
+                            pieChartHR.DataSource.SetValue("Successful", callback.OkCount);
+                            pieChartHR.DataSource.SetValue("Pending", callback.AwaitingCount);
+                            pieChartHR.DataSource.SetValue("Technical Error", callback.TechnicalErrorCount);
 
                             Debug.Log("Error Count: " + callback.TechnicalErrorCount);
                             Debug.Log("OK Count: " + callback.OkCount);

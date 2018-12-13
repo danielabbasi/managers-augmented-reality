@@ -55,7 +55,12 @@ public class LoadDeptOverview : MonoBehaviour, ITrackableEventHandler
 
                             Feed<OrganisationalUnitProcessType> organisationalUnitProcessTypes = ApiHelper.GetOrganisationalUnitProcessTypes();
 
+                            Debug.Log("HR");
 
+                            foreach (var a in organisationalUnitProcessTypes.Entries)
+                            {
+                                Debug.Log(a.Title);
+                            }
 
 
                             Feed<OrganisationalUnitProcess> organisationalUnitProcesses1 = ApiHelper.GetOrganisationalUnitProcesses(
@@ -69,6 +74,8 @@ public class LoadDeptOverview : MonoBehaviour, ITrackableEventHandler
                                    .Where((organisationalUnitProcessType) =>  organisationalUnitProcessType.Title.ToLower() == "cwl hr onboarding")
                                    .FirstOrDefault()
                                    .Id);
+
+                           
 
                             List<ProcessStatuses> processStatuses1 = organisationalUnitProcesses1.Entries
                                 .Select((organisationalUnitProcess) =>
@@ -145,20 +152,16 @@ public class LoadDeptOverview : MonoBehaviour, ITrackableEventHandler
 
                             Feed<OrganisationalUnitProcessType> organisationalUnitProcessTypes = ApiHelper.GetOrganisationalUnitProcessTypes();
 
+                            Debug.Log("Marketing");
 
+                            foreach (var a in organisationalUnitProcessTypes.Entries)
+                            {
+                                Debug.Log(a.Title);
+                            }
 
+                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses1 = ApiHelper.GetMarketingFairOrganisationalUnitProcesses();
 
-                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses1 = ApiHelper.GetOrganisationalUnitProcesses(
-                                organisationalUnitProcessTypes.Entries
-                                    .Where((organisationalUnitProcessType) => organisationalUnitProcessType.Title.ToLower() == "cwl market fair")
-                                    .FirstOrDefault()
-                                    .Id);
-
-                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses2 = ApiHelper.GetOrganisationalUnitProcesses(
-                               organisationalUnitProcessTypes.Entries
-                                   .Where((organisationalUnitProcessType) => organisationalUnitProcessType.Title.ToLower() == "cwl market campaign")
-                                   .FirstOrDefault()
-                                   .Id);
+                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses2 = ApiHelper.GetMarketingCampaignOrganisationalUnitProcesses();
 
                             List<ProcessStatuses> processStatuses1 = organisationalUnitProcesses1.Entries
                                 .Select((organisationalUnitProcess) =>
@@ -242,32 +245,15 @@ public class LoadDeptOverview : MonoBehaviour, ITrackableEventHandler
                             {
                                 Debug.Log(a.Title);
                             }
-
-
-                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses1 = ApiHelper.GetOrganisationalUnitProcesses(
-                                organisationalUnitProcessTypes.Entries
-                                    .Where((organisationalUnitProcessType) => organisationalUnitProcessType.Title.ToLower() == "cwl eng test")
-                                    .FirstOrDefault()
-                                    .Id);
-
-                            foreach (var a in organisationalUnitProcesses1.Entries)
-                            {
-                                Debug.Log(a.Title);
-                            }
-
-                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses2 = ApiHelper.GetOrganisationalUnitProcesses(
-                               organisationalUnitProcessTypes.Entries
-                                   .Where((organisationalUnitProcessType) => organisationalUnitProcessType.Title.ToLower() == "cwl eng release")
-                                   .FirstOrDefault()
-                                   .Id);
-
-                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses3 = ApiHelper.GetOrganisationalUnitProcesses(
-                               organisationalUnitProcessTypes.Entries
-                                   .Where((organisationalUnitProcessType) => organisationalUnitProcessType.Title.ToLower() == "cwl eng project")
-                                   .FirstOrDefault()
-                                   .Id);
-
                             
+
+                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses1 = ApiHelper.GetEngineeringProjectOrganisationalUnitProcesses();
+
+                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses2 = ApiHelper.GetEngineeringReleaseOrganisationalUnitProcesses();
+
+                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses3 = ApiHelper.GetEngineeringTestOrganisationalUnitProcesses();
+
+
 
 
                             List<ProcessStatuses> processStatuses1 = organisationalUnitProcesses1.Entries
@@ -360,36 +346,49 @@ public class LoadDeptOverview : MonoBehaviour, ITrackableEventHandler
 
     private void AddProjects(String dept, DepartmentOverviewData callback) {
 
-        GameObject deptObj = GameObject.Find("HR").gameObject;
+        GameObject deptObj = GameObject.Find(dept).gameObject;
         GameObject projectContainer = deptObj.transform.Find("DeptOverview").transform.Find("Middle Container").gameObject;
 
-        int count = 1;
-        int instanceCount = 0;
+        if (dept == "Marketing") {
+            dept = "Market";
+        }
+
+        else if (dept == "Engineering") {
+            dept = "Eng";
+        }
+
+        int Count = 1;
         //int spacer = 60;
         foreach (var a in callback.OrganisationalUnitProcessType.Entries)
         {
-            if (a.Title.Contains("HR"))
+            if (a.Title.Contains(dept))
             {
                 //Set rows position 
                 GameObject row = Instantiate(ProjectRow) as GameObject;
                 row.transform.SetParent(projectContainer.transform);
-                row.transform.localPosition = new Vector3(0, -(60 * count), 0);
+                row.transform.localPosition = new Vector3(0, -(60 * Count), 0);
                 row.transform.localRotation = Quaternion.identity;
                 row.transform.localScale = new Vector3(1, 1, 1);
 
                 //set row data
                 row.transform.Find("project-name").GetComponent<Text>().text = a.Title;
-                row.transform.Find("project-instances").GetComponent<Text>().text = callback.InstanceCount[instanceCount].ToString();
+                row.transform.Find("project-instances").GetComponent<Text>().text = callback.InstanceCount[Count - 1].ToString();
 
-                if (callback.InstanceCount[instanceCount] >0) {
-                    row.transform.Find("project-status").GetComponent<UnityEngine.UI.Image> ().color = new Color32(220, 150, 0, 255);
+                if (callback.InstanceCount[Count - 1] > 0)
+                {
+                    deptObj.transform.Find("DeptOverview").transform.Find("Top Container").transform.Find("Dept Status").GetComponent<UnityEngine.UI.Image>().color = new Color32(220, 150, 0, 255);
+                    row.transform.Find("project-status").GetComponent<UnityEngine.UI.Image>().color = new Color32(220, 150, 0, 255);
                 }
 
-                count = count + 1;
+                else if (callback.InstanceCount[Count - 1] == 0) {
+                    row.transform.Find("project-status").GetComponent<UnityEngine.UI.Image>().color = new Color32(15,225,0,255);
+                }
+                
+                Count = Count + 1;
             }
-            instanceCount++;
+
         }
-        count = 0;
+        Count = 0;
 
     }
 }

@@ -27,11 +27,6 @@ public class clickLoadMemberContact : MonoBehaviour {
         GameObject memContainer = memberContact.transform.Find("Member Info").gameObject;
         Debug.Log(memContainer.name);
 
-
-
-       
-
-
         //Add Project Processes
 
     }
