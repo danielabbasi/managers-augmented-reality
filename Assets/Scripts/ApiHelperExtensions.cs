@@ -68,6 +68,24 @@ public static class ApiHelperExtensions
             });
     }
 
+    public static Feed<OrganisationalUnitProcess> GetHROnboardingOrganisationalUnitProcesses(this ApiHelper helper)
+    {
+        if (helper == null) throw new ArgumentNullException("helper");
+
+        return helper.PerformRequest<Feed<OrganisationalUnitProcess>>(
+            @"https://live.runmyprocess.com/live/112761542179152739/requestreport/CWL%20HR%20Onboarding%20process%20report.csv?operator=EE%20EE%20IS&column=name%20status%20events%20published%20updated&value=215342%20ACCEPTANCE%20NULL&filter=PROJECT%20MODE%20PARENT&nb=20&first=0&method=GET&P_rand=28876",
+            (values) => { });
+    }
+
+    public static Feed<OrganisationalUnitProcess> GetHROffboardingOrganisationalUnitProcesses(this ApiHelper helper)
+    {
+        if (helper == null) throw new ArgumentNullException("helper");
+
+        return helper.PerformRequest<Feed<OrganisationalUnitProcess>>(
+            @"https://live.runmyprocess.com/live/112761542179152739/requestreport/CWL%20HR%20Offboarding%20Process%20Report.csv?operator=EE%20EE%20IS&column=name%20status%20events%20published%20updated&value=215283%20ACCEPTANCE%20NULL&filter=PROJECT%20MODE%20PARENT&nb=20&first=0&method=GET&P_rand=97390",
+            (values) => { });
+    }
+
     public static Feed<OrganisationalUnitProcess> GetMarketingFairOrganisationalUnitProcesses(this ApiHelper helper)
     {
         if (helper == null) throw new ArgumentNullException("helper");

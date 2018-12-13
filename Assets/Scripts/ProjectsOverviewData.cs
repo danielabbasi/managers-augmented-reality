@@ -8,6 +8,7 @@ namespace Assets.Scripts
     public class ProjectsOverviewData
     {
         public Feed<OrganisationalUnitProcess> ProjectProcesses { get; set; }
+        public List<int> ProcessStatus { get; set; }
         public int[] InstanceCount { get; set; }
     }
 }

@@ -7,11 +7,10 @@ using UnityEngine.UI;
 public class clickLoadSteps : MonoBehaviour {
 
 	void OnMouseDown(){
-		Debug.Log (this.gameObject.name + " Was Clicked.");
-		string stepName = this.gameObject.name;
 		GameObject dept = this.gameObject.transform.parent.parent.parent.gameObject;
 		GameObject processOverview = dept.transform.Find ("ProcessOverview").gameObject;
 		GameObject stepOverview = dept.transform.Find("StepOverview").gameObject;
+        string stepName = this.transform.Find("step-name").GetComponent<Text>().text.ToString();
 
         setNewViewData(stepOverview,stepName);
 
@@ -25,7 +24,7 @@ public class clickLoadSteps : MonoBehaviour {
     void setNewViewData(GameObject stepOverview, string step)
     {
         ////Add Project Title
-        //stepOverview.transform.Find("Top Container").Find("Dept Title").GetComponent<Text>().text = step;
+        stepOverview.transform.Find("Top Container").Find("Dept Title").GetComponent<Text>().text = step;
         //Debug.Log(stepOverview.name);
 
         ////Add Project Members
@@ -46,7 +45,7 @@ public class clickLoadSteps : MonoBehaviour {
         ///
 
 
-        
+
 
     }
 

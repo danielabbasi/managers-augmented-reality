@@ -28,6 +28,7 @@ public class clickLoadProcess : MonoBehaviour {
 		GameObject dept = this.gameObject.transform.parent.parent.parent.gameObject;
 		GameObject processOverview = dept.transform.Find ("ProcessOverview").gameObject;
 		GameObject projOverview = dept.transform.Find("ProjOverview").gameObject;
+       
 
         setNewViewData(processOverview,procName);
 
@@ -62,6 +63,9 @@ public class clickLoadProcess : MonoBehaviour {
 }
 
     void AddSteps(StepsData stepD) {
+        bool ok = false;
+        bool wait = false;
+        bool error = false;
         GameObject deptObj = this.gameObject.transform.parent.parent.parent.gameObject;
         GameObject processOverview = deptObj.transform.Find("ProcessOverview").gameObject;
         GameObject processContainer = processOverview.transform.Find("Middle Container").gameObject;
@@ -84,12 +88,49 @@ public class clickLoadProcess : MonoBehaviour {
             //set row data
             row.transform.Find("step-name").GetComponent<Text>().text = a.st.ToString();
             //row.transform.Find("proc-sie").GetComponent<Text>().text = callback.InstanceCount[Count - 1].ToString();
-
+            if (a.st == 301)
+            {
+                row.transform.Find("step-status").GetComponent<UnityEngine.UI.Image>().color = new Color32(220, 0, 0, 255);
+                error = true;
+            }
+            else if (a.st == 201)
+            {
+                row.transform.Find("step-status").GetComponent<UnityEngine.UI.Image>().color = new Color32(15, 225, 0, 255);
+                ok = true;
+            }
+            else if (a.st == 102)
+            {
+                row.transform.Find("step-status").GetComponent<UnityEngine.UI.Image>().color = new Color32(220, 150, 0, 255);
+                wait = true;
+            }
             //Extend dept canvas
             processOverview.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 400 + (Count * 60));
 
             Count++;
 
+        }
+
+        if (error == true)
+        {
+            deptObj.transform.Find("ProcessOverview").transform.Find("Top Container").transform.Find("Dept Status").GetComponent<UnityEngine.UI.Image>().color = new Color32(220, 0, 0, 255);
+        }
+        else if (error == false)
+        {
+            if (wait == true)
+            {
+                deptObj.transform.Find("ProcessOverview").transform.Find("Top Container").transform.Find("Dept Status").GetComponent<UnityEngine.UI.Image>().color = new Color32(220, 150, 0, 255);
+            }
+            else if (wait == false)
+            {
+                if (ok == true)
+                {
+                    deptObj.transform.Find("ProcessOverview").transform.Find("Top Container").transform.Find("Dept Status").GetComponent<UnityEngine.UI.Image>().color = new Color32(15, 225, 0, 255);
+                }
+                else
+                {
+                    deptObj.transform.Find("ProcessOverview").transform.Find("Top Container").transform.Find("Dept Status").GetComponent<UnityEngine.UI.Image>().color = new Color32(255, 255, 255, 255);
+                }
+            }
         }
     }
 

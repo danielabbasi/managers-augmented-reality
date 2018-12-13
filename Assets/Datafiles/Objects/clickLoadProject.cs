@@ -25,10 +25,8 @@ public class clickLoadProject : MonoBehaviour {
         }
 
 
-        Debug.Log (this.gameObject.name + " Was Clicked.");
 		GameObject projRow= this.gameObject;
         string projName = projRow.transform.Find("project-name").GetComponent<Text>().text;
-        Debug.Log(projName);
 		GameObject dept = this.gameObject.transform.parent.parent.parent.gameObject;
 		GameObject deptOverview = dept.transform.Find ("DeptOverview").gameObject;
 		GameObject projOverview = dept.transform.Find("ProjOverview").gameObject;
@@ -46,10 +44,8 @@ public class clickLoadProject : MonoBehaviour {
     {
         //Add Project Title
         projOverview.transform.Find("Top Container").Find("Dept Title").GetComponent<Text>().text = project;
-        Debug.Log(projOverview.name);
         //Add Project Members
         GameObject memContainer = projOverview.transform.Find("Member Container").gameObject;
-        Debug.Log(memContainer.name);
 
 
         memContainer.transform.Find("member_1").GetComponent<Text>().text ="Alan Smith";
@@ -112,28 +108,12 @@ public class clickLoadProject : MonoBehaviour {
 
                         Feed<OrganisationalUnitProcessType> organisationalUnitProcessTypes = ApiHelper.GetOrganisationalUnitProcessTypes();
 
-                        Debug.Log("HR");
+                        Feed<OrganisationalUnitProcess> organisationalUnitProcesses1 = ApiHelper.GetHROffboardingOrganisationalUnitProcesses();
 
-                        foreach (var a in organisationalUnitProcessTypes.Entries)
-                        {
-                            Debug.Log(a.Title);
-                        }
+                        Feed<OrganisationalUnitProcess> organisationalUnitProcesses2 = ApiHelper.GetHROnboardingOrganisationalUnitProcesses();
 
 
 
-                        Feed<OrganisationalUnitProcess> organisationalUnitProcesses1 = ApiHelper.GetOrganisationalUnitProcesses(
-                            organisationalUnitProcessTypes.Entries
-                                .Where((organisationalUnitProcessType) => organisationalUnitProcessType.Title.ToLower() == "cwl hr offboarding")
-                                .FirstOrDefault()
-                                .Id);
-
-                            Feed<OrganisationalUnitProcess> organisationalUnitProcesses2 = ApiHelper.GetOrganisationalUnitProcesses(
-                           organisationalUnitProcessTypes.Entries
-                               .Where((organisationalUnitProcessType) => organisationalUnitProcessType.Title.ToLower() == "cwl hr onboarding")
-                               .FirstOrDefault()
-                               .Id);
-
-                       
                         List<ProcessStatuses> processStatuses1 = organisationalUnitProcesses1.Entries
                             .Select((organisationalUnitProcess) =>
                             {
@@ -174,22 +154,16 @@ public class clickLoadProject : MonoBehaviour {
                             Processes = organisationalUnitProcesses2;
                         }
 
+                        List<int> processStatusList = getProcessStatusList(Processes);
+
                         ProjectsOverviewData deptData = new ProjectsOverviewData()
                         {
                             ProjectProcesses = Processes,
+                            ProcessStatus = processStatusList,
                             InstanceCount = InstancesInError
                         };
 
-                        //worker.ReportProgress(new OrganisationalUnitStatuses(
-                        //    processStatuses
-                        //        .Where((processStatus) => processStatus == ProcessStatuses.TechnicalError)
-                        //        .Count(),
-                        //    processStatuses
-                        //        .Where((processStatus) => processStatus == ProcessStatuses.Ok)
-                        //        .Count(),
-                        //    processStatuses
-                        //        .Where((processStatus) => processStatus == ProcessStatuses.Awaiting)
-                        //        .Count()));
+
 
                         worker.ReportProgress(deptData);
 
@@ -214,13 +188,6 @@ public class clickLoadProject : MonoBehaviour {
                         Feed<OrganisationalUnit> organisationalUnits = ApiHelper.GetOrganisationalUnits();
 
                         Feed<OrganisationalUnitProcessType> organisationalUnitProcessTypes = ApiHelper.GetOrganisationalUnitProcessTypes();
-
-                        Debug.Log("Marketing");
-
-                        foreach (var a in organisationalUnitProcessTypes.Entries)
-                        {
-                            Debug.Log(a.Title);
-                        }
 
                         Feed<OrganisationalUnitProcess> organisationalUnitProcesses1 = ApiHelper.GetMarketingFairOrganisationalUnitProcesses();
 
@@ -267,22 +234,14 @@ public class clickLoadProject : MonoBehaviour {
                             Processes = organisationalUnitProcesses2;
                         }
 
+                        List<int> processStatusList = getProcessStatusList(Processes);
+
                         ProjectsOverviewData deptData = new ProjectsOverviewData()
                         {
                             ProjectProcesses = Processes,
+                            ProcessStatus = processStatusList,
                             InstanceCount = InstancesInError
                         };
-
-                        //worker.ReportProgress(new OrganisationalUnitStatuses(
-                        //    processStatuses
-                        //        .Where((processStatus) => processStatus == ProcessStatuses.TechnicalError)
-                        //        .Count(),
-                        //    processStatuses
-                        //        .Where((processStatus) => processStatus == ProcessStatuses.Ok)
-                        //        .Count(),
-                        //    processStatuses
-                        //        .Where((processStatus) => processStatus == ProcessStatuses.Awaiting)
-                        //        .Count()));
 
                         worker.ReportProgress(deptData);
 
@@ -306,11 +265,6 @@ public class clickLoadProject : MonoBehaviour {
                         Feed<OrganisationalUnit> organisationalUnits = ApiHelper.GetOrganisationalUnits();
 
                         Feed<OrganisationalUnitProcessType> organisationalUnitProcessTypes = ApiHelper.GetOrganisationalUnitProcessTypes();
-
-                        Debug.Log("Engineering");
-
-                       
-
 
                         Feed<OrganisationalUnitProcess> organisationalUnitProcesses1 = ApiHelper.GetEngineeringProjectOrganisationalUnitProcesses();
 
@@ -364,7 +318,6 @@ public class clickLoadProject : MonoBehaviour {
                                 .Where((processStatus) => processStatus == ProcessStatuses.TechnicalError)
                                 .Count();
 
-                        Debug.Log(Process1Error + "   " + Process2Error + "   " + Process3Error + "   ");
 
                         int[] InstancesInError = { Process1Error, Process2Error, Process3Error };
 
@@ -383,22 +336,21 @@ public class clickLoadProject : MonoBehaviour {
                             Processes = organisationalUnitProcesses3;
                         }
 
+                        List<int> processStatusList = getProcessStatusList(Processes);
+
+                        
+                        foreach (var a in processStatusList) {
+                            Debug.Log(a);
+                        }
+
                         ProjectsOverviewData deptData = new ProjectsOverviewData()
                         {
                             ProjectProcesses = Processes,
+                            ProcessStatus = processStatusList,
                             InstanceCount = InstancesInError
                         };
 
-                        //worker.ReportProgress(new OrganisationalUnitStatuses(
-                        //    processStatuses
-                        //        .Where((processStatus) => processStatus == ProcessStatuses.TechnicalError)
-                        //        .Count(),
-                        //    processStatuses
-                        //        .Where((processStatus) => processStatus == ProcessStatuses.Ok)
-                        //        .Count(),
-                        //    processStatuses
-                        //        .Where((processStatus) => processStatus == ProcessStatuses.Awaiting)
-                        //        .Count()));
+                       
 
                         worker.ReportProgress(deptData);
 
@@ -420,6 +372,10 @@ public class clickLoadProject : MonoBehaviour {
     }
 
     void AddProcesses(string dept, ProjectsOverviewData Processes) {
+        bool ok = false;
+        bool wait = false;
+        bool error = false;
+
         GameObject deptObj = GameObject.Find(dept);
         GameObject projectOverview = deptObj.transform.Find("ProjOverview").gameObject;
         GameObject processContainer = projectOverview.transform.Find("Middle Container").gameObject;
@@ -440,6 +396,21 @@ public class clickLoadProject : MonoBehaviour {
             
             //set row data
             row.transform.Find("proc-name").GetComponent<Text>().text = a.Id;
+
+            Debug.Log(Count+"----"+Processes.ProcessStatus.ElementAt(Count-1));
+            if (Processes.ProcessStatus.ElementAt(Count -1) == 301) {
+                row.transform.Find("proc-status").GetComponent<UnityEngine.UI.Image>().color = new Color32(220, 0, 0, 255);
+                error = true;
+            }
+            else if (Processes.ProcessStatus.ElementAt(Count-1) == 201) {
+                row.transform.Find("proc-status").GetComponent<UnityEngine.UI.Image>().color = new Color32(15, 225, 0, 255);
+                ok = true;
+            }
+            else if (Processes.ProcessStatus.ElementAt(Count-1) == 102) {
+                row.transform.Find("proc-status").GetComponent<UnityEngine.UI.Image>().color = new Color32(220, 150, 0, 255);
+                wait = true;
+            }
+
             //row.transform.Find("proc-sie").GetComponent<Text>().text = callback.InstanceCount[Count - 1].ToString();
 
             //Extend dept canvas
@@ -447,6 +418,23 @@ public class clickLoadProject : MonoBehaviour {
 
 
             Count++;
+        }
+
+        if (error == true) {
+            deptObj.transform.Find("ProjOverview").transform.Find("Top Container").transform.Find("Dept Status").GetComponent<UnityEngine.UI.Image>().color = new Color32(220, 0, 0, 255);
+        }
+        else if (error == false){
+            if (wait == true) {
+                deptObj.transform.Find("ProjOverview").transform.Find("Top Container").transform.Find("Dept Status").GetComponent<UnityEngine.UI.Image>().color = new Color32(220, 150, 0, 255);
+            }
+            else if (wait == false) {
+                if (ok == true) {
+                    deptObj.transform.Find("ProjOverview").transform.Find("Top Container").transform.Find("Dept Status").GetComponent<UnityEngine.UI.Image>().color = new Color32(15, 225, 0, 255);
+                }
+                else {
+                    deptObj.transform.Find("ProjOverview").transform.Find("Top Container").transform.Find("Dept Status").GetComponent<UnityEngine.UI.Image>().color = new Color32(255, 255, 255, 255);
+                }
+            }
         }
 
     }
@@ -460,6 +448,25 @@ public class clickLoadProject : MonoBehaviour {
             }
         }
 
+    }
+
+    private List<int> getProcessStatusList(Feed<OrganisationalUnitProcess> Processes) {
+        List<int> statusList = new List<int>();
+        foreach (var a in Processes.Entries)
+        {
+            if (a.Categories != null || a.Categories.Count > 0)
+            {
+                int status = Int32.Parse(a.Categories.First().Label);
+                statusList.Add(status);
+            }
+            else
+            {
+                Debug.Log("FAIL");
+            }
+
+        }
+
+        return statusList ;
     }
 
    

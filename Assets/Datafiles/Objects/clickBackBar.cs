@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class clickLoadBarChart : MonoBehaviour
-{
+public class clickBackBar : MonoBehaviour {
 
     void OnMouseDown()
     {
-        GameObject DeptTargetObj = this.transform.parent.parent.parent.gameObject;
+        GameObject DeptTargetObj = this.transform.parent.parent.gameObject;
         GameObject DeptOverview = DeptTargetObj.transform.Find("DeptOverview").gameObject;
         GameObject backContainer = DeptTargetObj.transform.Find("BackBarContainer").gameObject;
 
-        string name = "";
+        //string name = "";
         //if (DeptTargetObj.name.Contains("HR"))
         //{
         //    name = "HR";
@@ -29,11 +28,10 @@ public class clickLoadBarChart : MonoBehaviour
         //name = "Pie3D" + name;
 
         GameObject BarChart = DeptTargetObj.transform.Find("Bar3DMultiple").gameObject;
-        setCanvasGroup(0, DeptOverview);
-        setToView(BarChart);
-        setToView(backContainer);
-        setToHidden(DeptOverview);
-
+        setCanvasGroup(1, DeptOverview);
+        setToView(DeptOverview);
+        setToHidden(BarChart);
+        setToHidden(backContainer);
     }
 
 
@@ -46,7 +44,7 @@ public class clickLoadBarChart : MonoBehaviour
 
     void setToView(GameObject o)
     {
-        if (o.name == "BackBarContainer")
+        if (o.name == "BackContainer")
         {
             o.transform.localPosition = new Vector3(-0.5f, 0, 0.3f);
         }
